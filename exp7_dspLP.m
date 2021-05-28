@@ -9,8 +9,13 @@ fs_lp = 2000;  %sampling frequency
 dev_lp = [(10^(rp_lp/20)-1)/(10^(rp_lp/20)+1) 10^(-rs_lp/20)];
 [N_lp, F0_lp, A0_lp,W_lp] = firpmord([fpass_lp, fstop_lp], [1 0], dev_lp, fs_lp);
 blp =  firpm(N_lp, F0_lp, A0_lp,W_lp);
+Hlp = filt(blp,1,fs_lp);
+disp('The transfer function of the filter is');
+Hlp
+disp('The order of the low pass filter is');
+N_lp
 freqz(blp,1,1024,fs_lp);
-title('Low pass FIR filter designed too meet specifications')
+title('Low pass FIR filter designed to meet specifications')
 z_lp = roots(blp);
 p_lp = 0;
 figure(2)

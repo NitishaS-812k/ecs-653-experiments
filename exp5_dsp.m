@@ -8,7 +8,7 @@ x4 = ((na>=-No(4))-(na>=No(4)));
 
 figure(1)
 subplot(2,1,1)
-plot(n,x1)
+stem(na,x1)
 grid on
 xlabel('n')
 [X1, w1] = dtft(x1);
@@ -20,7 +20,7 @@ xlabel('radians / \pi')
 
 figure(2)
 subplot(2,1,1)
-plot(n,x2)
+stem(na,x2)
 grid on
 xlabel('n')
 [X2, w2] = dtft(x2);
@@ -32,7 +32,7 @@ xlabel('radians / \pi')
 
 figure(3)
 subplot(2,1,1)
-plot(n,x3)
+stem(na,x3)
 grid on
 xlabel('n')
 [X3, w3] = dtft(x3);
@@ -44,7 +44,7 @@ xlabel('radians / \pi')
 
 figure(4)
 subplot(2,1,1)
-plot(n,x4)
+stem(na,x4)
 grid on
 xlabel('n')
 [X4, w4] = dtft(x4);
@@ -62,10 +62,11 @@ xcos = cos(0.25*pi*nb);
 [Xcos, wcos] = dtft(xcos);
 figure(5)
 subplot(2,1,1)
-plot(nb, xcos)
+stem(nb, xcos)
 grid on
 subplot(2,1,2)
 plot(wcos/pi, abs(fftshift(Xcos))/abs(max(Xcos)))
+title('DTFT')
 grid on
 xlabel('radians / \pi')
 

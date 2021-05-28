@@ -21,6 +21,6 @@ plot(w,abs(Hw));
 xlabel('Frequency')
 ylabel('Magnitude')
 subplot(1,2,2)
-plot(w, 20*log10(abs(Hw)))
+plot(w, mag2db(abs(Hw)))
 xlabel('Frequency')
 ylabel('Magnitude(dB)')
